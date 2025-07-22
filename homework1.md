@@ -235,13 +235,14 @@ g++ -std=c++17 -o powerset powerset.cpp
 1. **邏輯清晰，符合數學定義**  
    Ackermann 函數的數學定義本身就是遞迴形式：
 
-   $$
-   A(m, n) = \begin{cases}
-   n + 1 & \text{if } m = 0 \\
-   A(m - 1, 1) & \text{if } m > 0 \text{ 且 } n = 0 \\
-   A(m - 1, A(m, n - 1)) & \text{if } m > 0 \text{ 且 } n > 0
-   \end{cases}
-   $$
+
+$$
+A(m,n) = \begin{cases}
+n + 1 & \text{if } m = 0 \\
+A(m-1, 1) & \text{if } n = 0 \\
+A(m-1, A(m, n-1)) & \text{otherwise}
+\end{cases}
+$$
 
    使用遞迴函式能直觀地反映這個結構，使程式碼簡潔且易於閱讀。
 
